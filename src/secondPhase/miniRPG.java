@@ -8,6 +8,10 @@ public class miniRPG {
      static void main(String[] args) {
 
          boolean spustenie = true;
+         boolean zaProlog = false;
+         boolean hraZacala = false;
+         boolean smrt = false;
+         boolean prezitie = false;
         int hpHrac = 100;
         int utokHrac = 5;
         int utokNepriatel = 10;
@@ -20,13 +24,17 @@ public class miniRPG {
          // tu pojdu uvodne texty
 
 
-         System.out.println("1 - Začíname");
-         System.out.println("2 - Ukončiť");
-         int prolog = scanner.nextInt();
 
-if (spustenie == true){
+
+
+         while (spustenie && !zaProlog){
+             System.out.println("1 - Začíname");
+             System.out.println("2 - Ukončiť");
+
+             int prolog = scanner.nextInt();
          switch (prolog) {
              case 1:
+                 zaProlog = true;
                  System.out.println("Tak ideme na to ty hrdina");
                  break;
              case 2:
@@ -35,8 +43,9 @@ if (spustenie == true){
                  break;
              default:
                  System.out.println("nehraj sa na testera");
-         }
+                 break;
 
+         }
          }
 
 
@@ -46,13 +55,43 @@ if (spustenie == true){
          System.out.println();
 
          //menu hry
+         while (spustenie && !hraZacala) {
 
-         System.out.println("====Mini rpg=====");
-         System.out.println("1 - Spustiť hru");
-         System.out.println("2 - pravidlá");
-         System.out.println("0 - ypnúť hru");
+             System.out.println("====Mini rpg=====");
+             System.out.println("1 - Spustiť hru");
+             System.out.println("2 - pravidlá");
+             System.out.println("0 - vypnúť hru");
+
+             int menu = scanner.nextInt();
+
+             switch (menu) {
+                 case 1:hraZacala = true;
+                     System.out.println("Tak ideme na to");
+                     break;
+                 case 2:
+                     System.out.println("Si hrdina v lese a objaví sa nepriateľ");
+                     System.out.println("Základ je ho zabiť alebo újsť");
+                     System.out.println("Každé 3 ťahy máš na výber špeciálny útok");
+                     System.out.println("vyberaj ich s rozvahou, lebo nepriateľ je silný");
+                     System.out.println("Good luck hrdina");
+                     break;
+                 case 0:
+                     System.out.println("Tak možno nabudúce");
+                     spustenie = false;
+                     break;
+             }
+             System.out.println("si v lese ");
+             while (spustenie && !prezitie && !smrt) {
+
+                 System.out.println("Vyber si schopnosť");
+                 for (int i = 0; i < hodnoty.length; i++) {
+                     System.out.println((i + 1) + "-" + schopnosti[i] + "(" + hodnoty[i] + ")");
+                 }
+                 int vol = scanner.nextInt();
 
 
+             }
+         }
          //si v hre a musis si vybrat utok z array
 
 scanner.close();
