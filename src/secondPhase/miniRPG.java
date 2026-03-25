@@ -12,6 +12,7 @@ public class miniRPG {
          boolean hraZacala = false;
          boolean smrt = false;
          boolean prezitie = false;
+         int tahy = 0;
         int hpHrac = 100;
         int utokHrac = 5;
         int utokNepriatel = 10;
@@ -82,12 +83,44 @@ public class miniRPG {
              }
              System.out.println("si v lese ");
              while (spustenie && !prezitie && !smrt) {
+                 if (hpHrac <= 0) {smrt = true;};
+                 if (hpNepriatel <= 0) {prezitie = true;};
+                 //kazde 3 tahy vypise specialny utok
 
-                 System.out.println("Vyber si schopnosť");
-                 for (int i = 0; i < hodnoty.length; i++) {
-                     System.out.println((i + 1) + "-" + schopnosti[i] + "(" + hodnoty[i] + ")");
+
+                 System.out.println("Si na rade");
+                 System.out.println("1 - Klasicky utok");
+
+
+                 if (tahy % 3 == 0) {
+                     System.out.println("🎉 Máš špeciálny útok na výber!");
+                     // tu môžeš zobraziť nové útoky
+                     for (int i = 0; i < hodnoty.length; i++) {
+                         System.out.println((i + 1) + "-" + schopnosti[i] + "(" + hodnoty[i] + ")");
                  }
-                 int vol = scanner.nextInt();
+                     //vzbrat nejakz dalsi utok pre klasickz combat
+
+
+
+                 }
+                 int volba = scanner.nextInt();
+
+                 switch (volba) {
+                     case 1:
+                         System.out.println("klasicky utok");
+                         break;
+                         case 2:
+                             System.out.println("heal");
+                         break;
+                         case 3:
+                             System.out.println("utekam<");
+                             break;
+                             default:
+                                 System.out.println("zla volba");
+                                 break;
+
+
+                 } tahy++;
 
 
              }
