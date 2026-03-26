@@ -1,6 +1,6 @@
 package secondPhase;
 
-import java.util.Arrays;
+//import java.util.Arrays;
 import java.util.Scanner;
 
 public class miniRPG {
@@ -81,10 +81,10 @@ public class miniRPG {
              System.out.println("si v lese");
              System.out.println("prepadol ta goblin");
              while (spustenie && !prezitie && !smrt) {
-                 if (hpNepriatel <= 0) {prezitie = true;};
+                 if (hpNepriatel <= 0) {prezitie = true;}
 
                  hpHrac = hpHrac - utokNepriatel;
-                 if (hpHrac <= 0) {smrt = true;};
+                 if (hpHrac <= 0) {smrt = true;}
 
 
 
@@ -96,8 +96,6 @@ public class miniRPG {
                     System.out.println("Si na rade");
                     System.out.println("1 - Klasicky utok");
                     System.out.println("2 - Pokus o útek");
-                   // System.out.println("máš - " + hpHrac + " HP");
-                    //System.out.println("Goblin má" + hpNepriatel +" HP");
 
                     int volba = scanner.nextInt();
                     switch (volba) {
