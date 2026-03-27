@@ -90,22 +90,18 @@ public class miniRPG {
 
                     switch (volba) {
                         case 1: hpNepriatel = hpNepriatel - utokHrac ;
-                            System.out.println("útocis klasickym utokom na nepriatela za 5 DMG");
+                            System.out.println("útocis klasickym utokom na nepriatela za " + utokHrac +"  DMG");
                             hpHrac = hpHrac - utokNepriatel;
-                            System.out.print(" ");
                             break;
                         case 2:
                             if (Math.random() < sancaNaUtek) {
                             System.out.println("Podarilo sa ti uniect ty zbabelec ale prežil si.");
-                                hpHrac = hpHrac - utokNepriatel;
-                            System.out.print(" ");
-
+                            hpHrac = hpHrac - utokNepriatel;
                             hraZacala = false;
                             break;
                         }
                         default:
                             System.out.println("Vymyslel si si útok ktorý nezabral, smola");
-                            System.out.print(" ");
                     }
                 }
                  //kazde 3 tahy vypise specialny utok
@@ -122,8 +118,9 @@ public class miniRPG {
                      for (int i = 0; i < hodnoty.length; i++) {
                          System.out.println((i + 1) + "-" + schopnosti[i] + "(" + hodnoty[i] + ")");}
                          int volba = scanner.nextInt();
-                    if (hpNepriatel <= 0) {prezitie = true;}
-                    if (hpHrac <= 0) {smrt = true;}
+                        if (hpNepriatel <= 0) {prezitie = true;}
+                        if (hpHrac <= 0) {smrt = true;}
+
                          switch (volba) {
                              case 1:
                                  System.out.println("Silno si uderil za " + hodnoty[0] + " DMG");
