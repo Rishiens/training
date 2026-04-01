@@ -1,4 +1,4 @@
-package secondPhase.RPG;
+package secondPhase;
 
 //import java.util.Arrays;
 import java.util.Scanner;
@@ -20,8 +20,6 @@ public class miniRPG {
         double sancaNaUtek = 0.20;
         String[] schopnosti = {"silný útok","healing", "útek"};
         int [] hodnoty = {15, 15, 20};
-         Enemy g = Enemy.gremlyn();
-         Enemy t = Enemy.troll();
          Scanner scanner = new Scanner(System.in);
 
 
