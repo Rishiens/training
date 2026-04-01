@@ -2,7 +2,7 @@ package secondPhase.RPG;
 
 public class Player {
 
-    static int hp = 100 ;
+    public static int hp = 120 ;
     int damage= 15;
 
     Player (int hp, int damage) {

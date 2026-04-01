@@ -1,6 +1,8 @@
-package secondPhase;
+package secondPhase.RPG;
 
 //import java.util.Arrays;
+import secondPhase.RPG.Player;
+
 import java.util.Scanner;
 
 public class miniRPG {
@@ -83,12 +85,12 @@ public class miniRPG {
              while (spustenie && !prezitie && !smrt) {
                  if (hpNepriatel <= 0) {prezitie = true;}
 
-                 hpHrac = hpHrac - utokNepriatel;
-                 if (hpHrac <= 0) {smrt = true;}
+                 Player.hp = Player.hp - utokNepriatel;
+                 if (Player.hp <= 0) {smrt = true;}
 
 
 
-                 System.out.println("máš - " + hpHrac + " HP");
+                 System.out.println("máš - " + Player.hp + " HP");
                  System.out.println("Goblin má" + hpNepriatel +" HP");
                  //vzbrat nejakz dalsi utok pre klasickz combat
                 if (tahy != 3) {
@@ -99,7 +101,7 @@ public class miniRPG {
 
                     int volba = scanner.nextInt();
                     switch (volba) {
-                        case 1: hpNepriatel = hpNepriatel - utokHrac ;
+                        case 1: hpNepriatel = hpNepriatel - Player.hp ;
                             System.out.println("útocis klasickym utokom na nepriatela za 5 DMG");
                             System.out.print(" ");
                             break;
@@ -122,7 +124,7 @@ public class miniRPG {
                  //kazde 3 tahy vypise specialny utok
 
                  if (tahy % 3 == 0) {
-                     System.out.println("máš - " + hpHrac + " HP");
+                     System.out.println("máš " + Player.hp + " HP");
                      System.out.println("Goblin má" + hpNepriatel +" HP");
                      System.out.println("Si na rade");
                      System.out.println("🎉 Máš špeciálny útok na výber!");
@@ -139,7 +141,7 @@ public class miniRPG {
                                  break;
                              case 2:
                                  System.out.println("heal");
-                                 hpHrac = hpHrac + hodnoty[1];
+                                 Player.hp = Player.hp + hodnoty[1];
                                  System.out.println("Uzdravil si sa za " + hodnoty[1] + " HP");
                                  break;
                              case 3:
